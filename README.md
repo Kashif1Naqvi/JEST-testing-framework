@@ -130,4 +130,45 @@ test("compiling android goes as expected!",()=>{
 	expect(()=>Android()).toThrow();
 	expect(()=>Android()).toThrow(/JDK/);
 })
+
+// TESTING ansynchronous
+
+
+function fetchData(){
+	return 'peanut butter';
+}
+
+
+test("this is data peanut butter",done => {
+	function callBack(data){
+		expect(fetchData(data)).toBe('peanut butter');
+		done()
+	}
+	callBack();
+});
+
+
+
+beforeEach(()=>console.log("1 beforeEach"));
+afterEach(()=>console.log("1 after Each"));
+afterAll(()=>console.log("1 after all"));
+beforeAll(()=>console.log("1 before all"));
+test('',()=>console.log("1 test"));
+
+describe('nested describe!', ()=>{
+	beforeAll(()=>console.log('2 inner before all'));
+	afterAll(()=>console.log("2 after all"));
+	beforeEach(()=>console.log("2 before Each"));
+	afterEach(()=>console.log("2 after Each!"));
+	test('',()=>console.log("2 test!"))
+});
+
+
+// only run one test
+
+test.only('this will be the only test that runs', ()=>{
+	expect(true).toBe(true);
+})
+
+
 ```
