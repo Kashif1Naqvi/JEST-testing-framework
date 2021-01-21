@@ -1,11 +1,13 @@
 JEST is use for testing.
 
-you run the project just
-`cd project_dir`
+you run the project just by typing
+`git clone https://github.com/Kashif1Naqvi/JEST-testing-framework.git`
+`cd JEST-testing-framework`
+`npm install`
 then type
 `npm install`
 
-
+```
 const sum = require('./sum');
 
 test('add 1 + 2 to equal 3', ()=> {
@@ -128,3 +130,4 @@ test("compiling android goes as expected!",()=>{
 	expect(()=>Android()).toThrow();
 	expect(()=>Android()).toThrow(/JDK/);
 })
+```
